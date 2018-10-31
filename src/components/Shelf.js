@@ -4,7 +4,7 @@ import {PropTypes} from 'prop-types'
 
 class Shelf extends Component {
 
-  static PropTypes = {
+  static propTypes = {
     books: PropTypes.array.isRequired,
     title: PropTypes.string.isRequired,
     updateShelf: PropTypes.func.isRequired
@@ -22,7 +22,7 @@ class Shelf extends Component {
         <h2 className="bookshelf-title">{this.props.title}</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
-            {books.map((book, index) => (<Book book={book} key={index} changeBookShelf={(shelf) => {
+            {books.map((book, index) => (<Book book={book} key={index} updateShelf={(shelf) => {
               this.updateBook(book, shelf)
             }}/>))}
           </ol>

@@ -38,7 +38,7 @@ class BooksApp extends React.Component {
       <BrowserRouter>
       <div className="app">
       <Route exact path="/" render={() => (<ListBooks books={this.state.Books} onChange={this.updateBooks}/>)}/>
-      <Route exact path="/search" render={({history}) => (<SearchBook onChange={this.updateBooks} myBooks={this.state.Books}/>)}/>
+      <Route exact path="/search" render={({history}) => (<SearchBook  myBooks={this.state.Books} onChange={this.updateBooks}/>)}/>
       </div>
       </BrowserRouter>
     )

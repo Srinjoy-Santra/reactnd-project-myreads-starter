@@ -4,7 +4,7 @@ import {PropTypes} from 'prop-types'
 import {Link} from 'react-router-dom'
 
 class ListBooks extends Component{
-  static PropTypes = {
+  static propTypes = {
     books : PropTypes.array.isRequired,
     onChange : PropTypes.func.isRequired
   }
@@ -18,10 +18,10 @@ render(){
         </div>
         <div className="list-books-content">
           <div>
-            <Shelf books={books.filter((book) => (book.shelf === "currentlyReading"))} title="Currently Reading" onChangeShelf={this.props.onChange}/>
+            <Shelf books={books.filter((book) => (book.shelf === "currentlyReading"))} title="Currently Reading" updateShelf={this.props.onChange}/>
 
-            <Shelf books={books.filter((book) => (book.shelf === "read"))} title="Read" onChangeShelf={this.props.onChange}/>
-            <Shelf books={books.filter((book) => (book.shelf === "wantToRead"))} title="Want to Read" onChangeShelf={this.props.onChange}/>
+            <Shelf books={books.filter((book) => (book.shelf === "read"))} title="Read" updateShelf={this.props.onChange}/>
+            <Shelf books={books.filter((book) => (book.shelf === "wantToRead"))} title="Want to Read" updateShelf={this.props.onChange}/>
           </div>
         </div>
         <div className="open-search">
