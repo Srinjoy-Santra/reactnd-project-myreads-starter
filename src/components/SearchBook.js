@@ -25,15 +25,16 @@ class SearchBook extends Component{
   }
 
   changeShelf = (books) => {
-   let all_Books = this.props.myBooks
+   let allBooks = this.props.myBooks
    for (let book of books) {
      book.shelf = "none"
    }
 
+
    for (let book of books) {
-     for (let b of all_Books) {
-       if (b.id === book.id) {
-         book.shelf = b.shelf
+     for (let aBook of allBooks) {
+       if (aBook.id === book.id) {
+         book.shelf = aBook.shelf
        }
      }
    }
